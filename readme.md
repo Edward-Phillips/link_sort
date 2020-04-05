@@ -13,6 +13,7 @@ Assumptions:
  - the challenge map is called "00_challenge_map.md"
  - the challenge .md files are on the same level in the same folder as the challenge map.
  - the github address of the repo is passed as an argument to the method.
+ - the challenge_map file has no indentation.
 
 
  LINK ORDER:
