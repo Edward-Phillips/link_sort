@@ -21,4 +21,6 @@ HOW TO USE:
 
 to add insert all the links and remove any previously inserted links:
 
-type LinkSort.link_challenges with the linksort.rb file loaded up in the directory in question.
+type LinkSort.link_challenges with the linksort.rb file loaded up in the repository in question.
+
+The format of this repository is an example of the required layout for this tool to work effectively.
