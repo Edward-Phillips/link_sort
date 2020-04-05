@@ -14,6 +14,8 @@ Assumptions:
  - the challenge .md files are on the same level in the same folder as the challenge map.
  - the github address of the repo is passed as an argument to the method.
  - the challenge_map file has no indentation.
+ - the names of the challenges are after the step number with no space and a new line for each step.
+ - there is no step 0
 
 
  LINK ORDER:
