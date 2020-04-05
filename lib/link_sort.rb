@@ -25,4 +25,21 @@ class LinkSort
     result = linestring[0,numberlength].to_i
     result
   end
+
+  def self.make_link(number)
+    line = self.step(number)
+    self.tidy(line)
+    "#{REPO_ADDRESS}#{line}"
+  end
+
+  def self.tidy(line)
+    while line[0] != "."
+      line[0] = ""
+    end
+    line[0] = ""
+    while line[0] == " "
+      line[0] = ""
+    end
+    line
+  end
 end

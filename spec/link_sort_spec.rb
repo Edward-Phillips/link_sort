@@ -12,6 +12,7 @@ describe LinkSort do
   end
   context "generating the link" do
     it " should be able to generate the link to a step given the step number." do
+      LinkSort.find_order
       expect(LinkSort.make_link(1)).to eq("https://github.com/Edward-Pillips/link_sort/blob/master/mefirst.md")
     end
   end
