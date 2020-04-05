@@ -11,7 +11,7 @@ class LinkSort
     lines = @info.split("\n")
     for i in lines do
        if self.step_number(i) == number
-        return i
+        return self.tidy(i)
        end
     end
   end
@@ -28,7 +28,6 @@ class LinkSort
 
   def self.make_link(number)
     line = self.step(number)
-    self.tidy(line)
     "#{REPO_ADDRESS}#{line}"
   end
 
@@ -41,5 +40,20 @@ class LinkSort
       line[0] = ""
     end
     line
+  end
+
+  def self.insert_link(number)
+    File.write(self.step(number), "\nLink to next step: #{self.make_link(number + 1)}", mode: "a")
+  end
+
+  def self.link_challenges
+    self.find_order
+    lines = @info.split("\n")
+    i = 1
+    a_number_of = lines.length - 2 # need to add a method to define the number of lines before the first step.
+    a_number_of.times {
+      self.insert_link(i)
+      i += 1
+    }
   end
 end

@@ -10,16 +10,9 @@ Assumptions:
 
  - All challenge steps have a "Next Step #{link}" as the final line of the file - sorry rubocop.
  - The order is in the challenge map
- - the challenge map is called "00_challenge_map.md"
+ - the challenge map file name is saved to the LinkSort class constant CHALLENGE_MAP
  - the challenge .md files are on the same level in the same folder as the challenge map.
- - the github address of the repo is passed as an argument to the method.
+ - the github address of the repo is saved to the LinkSort class constant REPO_ADDRESS
  - the challenge_map file has no indentation.
- - the names of the challenges are after the step number with no space and a new line for each step.
+ - the names of the challenges are after the step number with a new line for each step.
  - there is no step 0
-
-
- LINK ORDER:
- 1. mefirst.md
- 2. mesecond.md
- 3. ozymandias.md
- 4. shhhnonames.md
