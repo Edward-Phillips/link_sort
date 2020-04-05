@@ -6,6 +6,9 @@ class LinkSort
     @info = file.read
     file.close
   end
+  def self.lines
+    @lines
+  end
 
   def self.step(number)
     lines = @info.split("\n")
@@ -50,10 +53,38 @@ class LinkSort
     self.find_order
     lines = @info.split("\n")
     i = 1
-    a_number_of = lines.length - 2 # need to add a method to define the number of lines before the first step.
+    a_number_of = lines.length - self.empty_steps - 1
+    (lines.length - 1).times{
+      self.link_remover(self.step(i))
+      i += 1
+    }
+    i = 1
     a_number_of.times {
       self.insert_link(i)
       i += 1
     }
+  end
+
+  def self.empty_steps
+    lines = @info.split("\n")
+    j = 0
+    for i in lines do
+      if i[0] =~ /[0-9]/
+        j += 1
+      end
+    end
+    result = lines.length - j
+  end
+  
+  def self.link_remover(filename)
+    file = File.open(filename)
+    filelines = file.read.split("\n")
+    file.close
+    if filelines[-1].include?("Link to next step:")
+      newcontents = filelines[0,filelines.length - 1].join("\n")
+      file = File.open(filename, "w")
+      file.write(newcontents)
+      file.close
+    end
   end
 end

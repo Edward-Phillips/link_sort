@@ -17,7 +17,7 @@ describe LinkSort do
   context "generating the link" do
     it " should be able to generate the link to a step given the step number." do
       LinkSort.find_order
-      expect(LinkSort.make_link(1)).to eq("\nhttps://github.com/Edward-Pillips/link_sort/blob/master/mefirst.md")
+      expect(LinkSort.make_link(1)).to eq("https://github.com/Edward-Pillips/link_sort/blob/master/mefirst.md")
     end
   end
   context "inserting the link" do
@@ -25,6 +25,9 @@ describe LinkSort do
       #IDK how to test the contents of a file being changed so I'm going to pretend this is the test and do it in IRB
     end
     it " should be able to insert all links in a single command" do
+      #as above I'm testing this in IRB until I develop my testing abilities to the point I can test for this.
+    end
+    it " should remove a link from a file if there is a link previously inserted." do
       #as above I'm testing this in IRB until I develop my testing abilities to the point I can test for this.
     end
   end
